@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/theme/css/mdb.min.css" >
+    <link rel="stylesheet" href="/static/css/parent.css">
+    <link rel="stylesheet" href="/static/theme/css/style.css">
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="/static/theme/js/popper.min.js"></script>
+    <script src="/static/theme/js/mdb.min.js"></script>
+
+
+    {% endblock %}
+</head>
+<body class="container">
+
+<div class="navigation sky-gradient">
+    <h1 class="page_name">
+        {% block page_name%}{% endblock %}
+    </h1>
+    <span class="spacer"></span>
+</div>
+
+{% block body %}
+{% endblock %}
+</body>
+
+{% block javascript %}
+<script>
+    Handlebars.registerHelper('formatTimestamp', function(timestamp) {
+        "use strict";
+
+        let mt = moment(timestamp, moment.ISO_8601);
+        return mt.format('Y-MM-DD HH:mm:ssZ');
+    });
+</script>
+{% endblock %}
+
+</html>

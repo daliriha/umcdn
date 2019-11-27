@@ -1,0 +1,109 @@
+/*
+ * This is the parent CSS stylesheet that all pages get basic styling from
+ */
+
+ @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+ body, .ui-btn {
+     font-family: Roboto;
+ }
+ select {
+    outline:none !important;
+ }
+ .navbar .nav li {
+     text-align: center;
+ }
+ .navbar .nav li i {
+     display: block;
+     font-size: 2rem;
+ }
+ .btn {
+     font-size: inherit;
+ }
+ .navigation {
+     display: flex;
+     flex-direction: row;
+     padding: 40px 10px;
+     border-bottom: 2px solid darkgrey;
+     background-color: whitesmoke;
+ }
+ 
+ .navigation a {
+     margin-right: 10px;
+     padding: 5px;
+     border: 1px solid darkgrey;
+     border-radius: 4px;
+     text-decoration: none;
+     cursor: pointer;
+     text: black;
+     background-color: lightskyblue;
+ }
+ 
+ .navigation .page_name {
+     flex-grow: 2;
+     text-align: center;
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+ 
+ .navigation a:hover {
+     background-color: deepskyblue;
+ }
+ 
+ .container {
+     padding: 10px;
+ }
+ 
+ .error {
+     width: 50%;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 5px;
+     border: 1px solid lightgrey;
+     border-radius: 3px;
+     background-color: #fbb;
+     visibility: hidden;
+ }
+ /******************** More CSS ***************************/
+ .md-form label, .md-form label.active {
+    font-size: 1em;
+    font-weight: normal;
+}
+table td, table th {
+    font-size: inherit;
+}
+.form-header {
+    padding: 1rem;
+    margin-top: -3.13rem;
+    margin-bottom: 3rem;
+    color: 
+#fff;
+text-align: center;
+border-radius: .125rem;
+box-shadow: 0 5px 11px 0
+rgba(0,0,0,.18),0 4px 15px 0
+    rgba(0,0,0,.15);
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.sky-gradient {
+    background: -webkit-gradient(linear,left top,right top,from(#0acffe),to(#495aff));
+    background: -webkit-linear-gradient(left,#0acffe 0,#495aff 100%);
+    background: -o-linear-gradient(left,#0acffe 0,#495aff 100%);
+    background: linear-gradient(to right,#0acffe 0, #495aff 100%);
+}
+.navigation {
+    color:white;
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 1.5em;
+border: 0;
+box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+.navigation .page_name {
+    font-weight: 400;
+    font-size: 1.2em;
+}

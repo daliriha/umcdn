@@ -1,0 +1,162 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /library:
+    get:
+      operationId: library.read_all
+      tags:
+        - Library
+      summary: Read the entire set of libraries, sorted by category
+      description: Read the entire set of libraries, sorted by category
+      responses:
+        200:
+          description: Successfully read libraries set operation
+          schema:
+            type: array
+            items:
+              properties:
+                library_id:
+                  type: integer
+                  description: Id of the library
+                category:
+                  type: string
+                  description: First name of the person
+                version:
+                  type: string
+                  description: Last name of the person
+                subversion:
+                  type: string
+                  description: Create/Update timestamp of the person
+                path:
+                  type: string
+                  description: Create/Update timestamp of the person
+
+  /library/{category_name}/{version}:
+    get:
+      operationId: library.search
+      tags:
+        - Library
+      summary: Read one person
+      description: Read one person
+      parameters:
+        - name: category_name
+          in: path
+          description: Id of the person to get
+          type: string
+          required: True
+        - name: version
+          in: path
+          description: Id of the person to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read person from people data operation
+          schema:
+            type: object
+            properties:
+              person_id:
+                type: string
+                description: Id of the person
+              fname:
+                type: string
+                description: First name of the person
+              lname:
+                type: string
+                description: Last name of the person
+              timestamp:
+                type: string
+                description: Creation/Update timestamp of the person record
+              notes:
+                type: array
+                items:
+                  properties:
+                    person_id:
+                      type: integer
+                      description: Id of person this note is associated with
+                    note_id:
+                      type: integer
+                      description: Id of this note
+                    content:
+                      type: string
+                      description: content of this note
+                    timestamp:
+                      type: string
+                      description: Create/Update timestamp of this note
+
+  /category:
+    get:
+      operationId: library.all_categories
+      tags:
+        - Category
+      summary: Read the entire set of libraries, sorted by category
+      description: Read the entire set of libraries, sorted by category
+      responses:
+        200:
+          description: Successfully read libraries set operation
+          schema:
+            type: array
+            items:
+              properties:
+                category:
+                  type: string
+                  description: First name of the person
+
+  /category/{category_name}/versions:
+    get:
+      operationId: library.category_versions
+      tags:
+        - Category
+      summary: Read one person
+      description: Read one person
+      parameters:
+        - name: category_name
+          in: path
+          description: Id of the person to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read person from people data operation
+          schema:
+            type: object
+            properties:
+              person_id:
+                type: string
+                description: Id of the person
+              fname:
+                type: string
+                description: First name of the person
+              lname:
+                type: string
+                description: Last name of the person
+              timestamp:
+                type: string
+                description: Creation/Update timestamp of the person record
+              notes:
+                type: array
+                items:
+                  properties:
+                    person_id:
+                      type: integer
+                      description: Id of person this note is associated with
+                    note_id:
+                      type: integer
+                      description: Id of this note
+                    content:
+                      type: string
+                      description: content of this note
+                    timestamp:
+                      type: string
+                      description: Create/Update timestamp of this note

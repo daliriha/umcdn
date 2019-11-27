@@ -1,0 +1,94 @@
+{% extends "parent.html" %}
+{% block title %}Ferdowsi University of Mashhad CDN{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/home.css">
+{% endblock %}
+
+{% block page_name %}Ferdowsi University of Mashhad CDN{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+                <input id="url_person_id" type="hidden" value="{{ person_id }}"/>
+                <div class="section search-area">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="category-select">Category</label>
+                                <select id="category-select" class="category browser-default custom-select"></select>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="version-select">Version</label>
+                                <select id="version-select" class="versions browser-default custom-select"></select>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label></label>
+                            <button id="search-btn" class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-5">
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Version</th>
+            <th>Path</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="error">
+</div>
+
+<!-- Handlebars script tag entry -->
+{% raw %}
+<script id="table-template" type="text/x-handlebars-template">
+    {{#each libraries}}
+    <tr data-library_id="{{library_id}}">
+        <td class="category">{{category}}</td>
+        <td class="subversion">{{subversion}}</td>
+        <td class="path">{{path}}</td>
+    </tr>
+    {{/each}}
+
+</script>
+{% endraw %}
+
+<!-- Handlebars script tag entry -->
+{% raw %}
+<script id="category-select-template" type="text/x-handlebars-template">
+    {{#each categories}}
+    <option data-library_id="{{library_id}}">
+        {{category}}
+    </option>
+    {{/each}}
+</script>
+{% endraw %}
+
+<!-- Handlebars script tag entry -->
+{% raw %}
+<script id="versions-select-template" type="text/x-handlebars-template">
+    {{#each versions}}
+    <option data-library_id="{{library_id}}">
+        {{subversion}}
+    </option>
+    {{/each}}
+</script>
+{% endraw %}
+
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+<script src="/static/js/home.js"></script>
+<script src="/static/js/category1.js"></script>
+<script src="/static/js/versions1.js"></script>
+{% endblock %}
