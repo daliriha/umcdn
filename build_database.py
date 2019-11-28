@@ -6,22 +6,22 @@ from models import Library
 # Data to initialize database with
 LIBRARY = [
     {
+        "category": "bootstrap",
+        "version": "4",
+        "subversion": "4.2.1",
+        "path": "https://umcdn.um.ac.ir/bootstrap/4/4.2.1/css/bootstrap-reboot.min.css.map"
+    },
+    {
         "category": "jquery",
         "version": "3",
         "subversion": "3.3.1",
         "path": "https://umcdn.um.ac.ir/jquery/3/3.3.1/jquery.min.js"
     },
     {
-        "category": "jquery",
-        "version": "3",
-        "subversion": "3.3.0",
-        "path": "https://umcdn.um.ac.ir/jquery/3/3.3.0/jquery.min.js"
-    },
-    {
         "category": "bootstrap",
         "version": "4",
         "subversion": "4.3.1",
-        "path": "https://umcdn.um.ac.ir/bootstrap/4/4.3.1/js/bootstrap.min.js"
+        "path": "https://umcdn.um.ac.ir/bootstrap/4/4.2.1/css/bootstrap-grid.css.map"
     },
 {
         "category": "bootstrap",
@@ -40,6 +40,12 @@ LIBRARY = [
         "version": "4",
         "subversion": "4.2.1",
         "path": "https://umcdn.um.ac.ir/bootstrap/4/4.2.1/css/bootstrap.min.css"
+    },
+{
+        "category": "bootstrap",
+        "version": "4",
+        "subversion": "4.2.1",
+        "path": "https://umcdn.um.ac.ir/bootstrap/4/4.2.1/css/rtl/bootstrap.min.css"
     },
 {
         "category": "bootstrap",
