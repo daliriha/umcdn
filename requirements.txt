@@ -22,7 +22,7 @@ openapi-spec-validator==0.2.8
 oursql3==0.9.4
 PyMySQL==0.9.3
 pyrsistent==0.15.5
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 six==1.12.0
 sqlacodegen==2.1.0
